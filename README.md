@@ -10,6 +10,14 @@ On a fresh start it is recommend to run:
 apt update && apt upgrade -y
 ```
 
+### Auto-Patch
+
+Install upgrades at 4 AM UTC and reboot if necessary.
+
+```
+curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/auto-patch.sh | bash -s -- 
+```
+
 ### Install nginx
 
 ```sh

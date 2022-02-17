@@ -6,7 +6,7 @@ mkdir -p /etc/systemd/system/apt-daily.timer.d
 cat > /etc/systemd/system/apt-daily.timer.d/override.conf << EOF
 [Timer]
 OnCalendar=
-OnCalendar=03:00
+OnCalendar=04:00
 RandomizedDelaySec=15m
 EOF
 
@@ -14,7 +14,7 @@ mkdir -p /etc/systemd/system/apt-daily-upgrade.timer.d
 cat > /etc/systemd/system/apt-daily-upgrade.timer.d/override.conf << EOF
 [Timer]
 OnCalendar=
-OnCalendar=03:30
+OnCalendar=04:30
 RandomizedDelaySec=0
 EOF
 
