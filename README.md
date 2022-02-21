@@ -1,6 +1,6 @@
 # debiano
 
-A useful script collection for Debian 10 that can be used remotely.
+A useful setup script collection for Debian 10 servers that can be used remotely.
 
 ## Install scripts
 
@@ -15,23 +15,23 @@ apt update && apt upgrade -y
 Install upgrades at 4 AM UTC and reboot if necessary.
 
 ```
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/auto-patch.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/auto-patch.sh | bash -s -- 
 ```
 
 ### Install nginx
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/install-nginx.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/install-nginx.sh | bash -s -- 
 ```
 
 ### Install PHP 7.4 (FPM) for nginx
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/install-nginx-phpfpm-7_4.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/install-nginx-phpfpm-7_4.sh | bash -s -- 
 ```
 
 ### Install Certbot (for nginx)
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/install-certbot.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/install-certbot.sh | bash -s -- 
 ```
