@@ -1,6 +1,6 @@
 # debiano
 
-A useful script collection for Proxmox VE 6 that can be used remotely.
+A useful setup script collection for Proxmox VE 6 that can be used remotely.
 
 ## Install scripts
 
@@ -26,11 +26,11 @@ apt update && apt upgrade -y && apt autoremove
 Install upgrades at 3 AM UTC and reboot if necessary.
 
 ```
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-6/scripts/auto-patch.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/auto-patch.sh | bash -s -- 
 ```
 
 ### Install Certbot
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-6/scripts/install-certbot.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/install-certbot.sh | bash -s -- 
 ```
