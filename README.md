@@ -95,3 +95,16 @@ or locally:
 sudo tasksel --new-install # install only system utilities (if not done yet) and re-log
 sudo ~/git/gh/martin-braun/debiano/scripts/install-suckless-suite.sh
 ```
+
+### Install Firefox and privacy user.js
+
+
+```sh
+sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/scripts/install-firefox.sh | sudo bash -s --
+```
+
+or locally: 
+
+```sh
+sudo ~/git/gh/martin-braun/debiano/scripts/install-firefox.sh
+```
