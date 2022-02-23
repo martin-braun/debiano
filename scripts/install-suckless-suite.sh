@@ -1,10 +1,18 @@
 #!/bin/bash
 
-sudo apt update && sudo apt install git gcc make xorg build-essential libxinerama-dev libx11-dev libxft-dev -y
-if [ $? -ne 0 ]; then
-	echo "Failed to install essential packages."
-	exit 1
-fi
+sudo apt update
+
+function try_install {
+	if ! command -v $2 >/dev/null 2>&1; then
+		sudo apt install $1 -y || { echo "Failed to install essential packages."; exit 1; }
+	fi
+}
+
+try_install git git
+try_install gcc gcc
+try_install make make
+try_install xorg startx
+sudo apt install build-essential libxinerama-dev libx11-dev libxft-dev -y
 
 pwd=$(pwd)
 installroot=$HOME/git/gh/martin-braun
