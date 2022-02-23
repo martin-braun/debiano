@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# this program will add APT pinning for packages that are fixed in
+# unstable and not testing
+#
+# see https://bugs.debian.org/725934
+
+set -e
+
+echo "running debsecan check for issues fixed in unstable..." >&2
+
+rm -f /var/lib/debsecan/apt_preferences.disabled
+cat << EOF
+# pin packages with security issues fixed in unstable
+# generated automatically on $(date) by $0
+
+EOF > /var/lib/debsecan/apt_preferences.disabled
+
+for pkg in $(debsecan --suite=sid --only-fixed | cut -d\  -f2 | sort -u) ; do
+    suite=unstable
+    case "$pkg" in
+        *-dbgsym)
+            suite=unstable-debug
+            ;;
+    esac
+    echo "adding pin to suite $suite for package $pkg" >&2
+    cat << EOF
+Package: $pkg
+Pin: release a=$suite
+Pin-Priority: 990
+
+EOF >> /var/lib/debsecan/apt_preferences.disabled
+done
+chmod 644 /var/lib/debsecan/apt_preferences.disabled
+mv --force /var/lib/debsecan/apt_preferences.disabled /var/lib/debsecan/apt_preferences

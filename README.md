@@ -1,37 +1,97 @@
 # debiano
 
-A useful script collection for Debian 10 that can be used remotely.
+A useful setup script collection for Debian for Desktop environments that can be used remotely. On your installation disable root, enable http updates as well as non-free packages and skip auto updates and system utilities.
 
 ## Install scripts
 
-On a fresh start it is recommend to run: 
-
-```
-apt update && apt upgrade -y
-```
-
-### Auto-Patch
-
-Install upgrades at 4 AM UTC and reboot if necessary.
-
-```
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/auto-patch.sh | bash -s -- 
-```
-
-### Install nginx
+Start off by installing the essentials: 
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/install-nginx.sh | bash -s -- 
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+sudo apt install curl ca-certificates -y
 ```
 
-### Install PHP 7.4 (FPM) for nginx
+Also recommend:
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/install-nginx-phpfpm-7_4.sh | bash -s -- 
+sudo apt install aptitude apt-rdepends xclip python3-pip -y
+pip3 install opencv-python
 ```
 
-### Install Certbot (for nginx)
+### Install git / GitHub CLI
+
+Install git and GitHub CLI as well as create and upload key
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/v10/scripts/install-certbot.sh | bash -s -- 
+sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/scripts/install-git-gh.sh | sudo bash -s --
+```
+
+### Install debiano with utils (requires git)
+
+Install all these install scripts and additional utils to your system. Utils consist of useful scripts, functions and aliases that will be made available in $PATH.
+
+```sh
+sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/scripts/install-debiano.sh | sudo bash -s --
+```
+
+Upgrade with: 
+
+```sh
+git -C ~/git/gh/martin-braun/debiano/ pull
+```
+
+### Install rolling repositories
+
+Subscribe to the testing repository and get hot fixes from the unstable repository. Also subscribe several useful repositories
+
+```sh
+sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/scripts/install-rolling-repos.sh | sudo bash -s --
+```
+
+or locally: 
+
+```sh
+sudo ~/git/gh/martin-braun/debiano/scripts/install-rolling-repos.sh
+```
+
+Finalize by install packages: 
+
+```sh
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+```
+
+or locally: 
+
+```sh
+apt-upd
+```
+
+### Install DNS stub resolver
+
+Encrypt DNS queries:
+
+```sh
+sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/scripts/install-dns-stub-resolver.sh | sudo bash -s --
+```
+
+or locally: 
+
+```sh
+sudo ~/git/gh/martin-braun/debiano/scripts/install-dns-stub-resolver.sh
+```
+
+### Install suckless suite
+
+Compile and install suckless suite (dwm / st):
+
+```sh
+sudo tasksel --new-install # install only system utilities (if not done yet) and re-log
+sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/scripts/install-suckless-suite.sh | sudo bash -s --
+```
+
+or locally: 
+
+```sh
+sudo tasksel --new-install # install only system utilities (if not done yet) and re-log
+sudo ~/git/gh/martin-braun/debiano/scripts/install-suckless-suite.sh
 ```
