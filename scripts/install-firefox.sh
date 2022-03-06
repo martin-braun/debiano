@@ -1,4 +1,5 @@
 #!/bin/bash
+trap 'echo "$ $BASH_COMMAND"' DEBUG
 
 function try_install {
 	if ! command -v $2 >/dev/null 2>&1; then
@@ -20,3 +21,5 @@ fi
 
 $installdir/updater.sh -l
 $installdir/updater.sh -l
+
+trap - DEBUG

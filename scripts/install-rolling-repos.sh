@@ -1,4 +1,5 @@
 #!/bin/bash
+trap 'echo "$ $BASH_COMMAND"' DEBUG
 
 stables="stretch|buster|bullseye|bookworm"
 
@@ -75,3 +76,5 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/assets/debse
 # Pin: release a=unstable
 # Pin-Priority: 990
 # EOF > /etc/apt/preferences.d/unstable-packages
+
+trap - DEBUG

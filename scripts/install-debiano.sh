@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bas
+trap 'echo "$ $BASH_COMMAND"' DEBUGh
 
 installroot=$HOME/git/gh/martin-braun
 if [ $1 ]; then
@@ -9,3 +10,5 @@ git clone -b desktop git@github.com:martin-braun/debiano.git $installroot/debian
 echo "source $installroot/debiano/util/.bashrc" >> $HOME/.bashrc
 source $HOME/.bashrc
 echo "Done!"
+
+trap - DEBUG

@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bas
+trap 'echo "$ $BASH_COMMAND"' DEBUGh
 
 stables="stretch|buster|bullseye|bookworm"
 
@@ -27,3 +28,5 @@ sudo sed -i 's/nameserver [0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/nameserver 127.0.0.1/' 
 dig +short txt qnamemintest.internet.nl
 
 echo "Done, please visit https://www.cloudflare.com/ssl/encrypted-sni/ to test if your DNS is encrypted."
+
+trap - DEBUG

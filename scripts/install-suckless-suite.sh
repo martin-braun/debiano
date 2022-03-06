@@ -1,4 +1,5 @@
 #!/bin/bash
+trap 'echo "$ $BASH_COMMAND"' DEBUG
 
 sudo apt update
 
@@ -52,3 +53,5 @@ echo "exec dwm" > $HOME/.xinitrc
 
 build_suckless_fork st
 build_suckless_fork dmenu
+
+trap - DEBUG
