@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias apt-upd='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+alias apt-up='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y'
