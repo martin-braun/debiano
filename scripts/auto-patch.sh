@@ -17,4 +17,4 @@ EOF
 sed -ri "s/(APT::Periodic::Update-Package-Lists[	 ]+\")[^\"]*/\1always/" /etc/apt/apt.conf.d/20auto-upgrades
 sed -ri "s/(APT::Periodic::Unattended-Upgrade[	 ]+\")[^\"]*/\1always/" /etc/apt/apt.conf.d/20auto-upgrades
 sed -ri "s/(\/\/[	 ]*)?(Unattended-Upgrade::Automatic-Reboot[	 ]+\")[^\"]*/\2true/" /etc/apt/apt.conf.d/50unattended-upgrades
-systemctl daemon-reload
+systemctl daemon-reload && echo Auto patching enabled!

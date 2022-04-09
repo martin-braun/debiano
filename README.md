@@ -7,7 +7,7 @@ A useful setup script collection for Debian 10 servers that can be used remotely
 Start off by installing the essentials: 
 
 ```sh
-apt update && apt upgrade -y && apt autoremove -y
+apt update && apt dist-upgrade -y && apt autoremove -y
 apt install curl wget software-properties-common gnupg -y
 ```
 
@@ -31,7 +31,7 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/auto-
 curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/install-nginx.sh | bash -s -- 
 ```
 
-©### Install PHP 7.4 (FPM) for nginx
+### Install PHP 7.4 (FPM) for nginx
 
 ```sh
 curl https://raw.githubusercontent.com/martin-braun/debiano/buster/scripts/install-nginx-phpfpm-7_4.sh | bash -s -- 
