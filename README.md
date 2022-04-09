@@ -9,7 +9,6 @@ If you don't use the subscription repository, please run this first:
 ```
 mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.disabled
 echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
-sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
 ```
 
 On a fresh start it is recommend to run: 
@@ -33,4 +32,12 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/
 
 ```sh
 curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/install-certbot.sh | bash -s -- 
+```
+
+### Remove nag
+
+To remove the nag alert that tells to subscribe:
+
+```sh
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/remove-nag.sh | bash -s -- 
 ```
