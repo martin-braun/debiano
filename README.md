@@ -1,6 +1,6 @@
 # debiano
 
-A useful setup script collection for Proxmox VE 6 that can be used remotely.
+A useful setup script collection for Proxmox VE 7 that can be used remotely.
 
 ## Install scripts
 
@@ -8,8 +8,7 @@ If you don't use the subscription repository, please run this first:
 
 ```
 mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.disabled
-echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
-apt update
+echo "deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list && apt update
 ```
 
 On a fresh start it is recommend to run: 
