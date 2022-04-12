@@ -25,13 +25,13 @@ apt update && apt upgrade -y && apt autoremove
 Install upgrades at 3 AM UTC and reboot if necessary.
 
 ```
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/auto-patch.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/auto-patch.sh | bash -s -- 
 ```
 
 ### Install Certbot
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/install-certbot.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- 
 ```
 
 ### Remove nag
@@ -39,5 +39,5 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/
 To remove the nag alert that tells to subscribe:
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve6/scripts/remove-nag.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/remove-nag.sh | bash -s -- 
 ```
