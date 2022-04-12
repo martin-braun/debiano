@@ -14,8 +14,8 @@ echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" > /
 On a fresh start it is recommend to run: 
 
 ```
-dpkg-reconfigure tzdata # to setup UTC
-apt update && apt upgrade -y && apt autoremove
+dpkg-reconfigure tzdata
+apt update && apt full-upgrade -y && apt autoremove -y
 ```
 
 > `pveupgrade` will execute `apt-get dist-upgrade` which is `apt full-upgrade` and thus is not recommend, unless upgrading after LTS.
