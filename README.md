@@ -19,8 +19,6 @@ apt update && apt full-upgrade -y && apt autoremove -y
 apt install vim -y
 ```
 
-> `pveupgrade` will execute `apt-get dist-upgrade` which is `apt full-upgrade` and thus is not recommend, unless upgrading after LTS.
-
 ### Auto-Patch
 
 Install upgrades at 3 AM UTC and reboot if necessary.
@@ -35,7 +33,7 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/
 curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- $email
 ```
 
-### Remove nag
+### Remove Nag
 
 To remove the nag alert that tells to subscribe:
 
