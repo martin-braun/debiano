@@ -30,7 +30,7 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/
 ### Install Certbot
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- $email
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- 
 ```
 
 ### Remove Nag

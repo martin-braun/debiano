@@ -2,7 +2,7 @@
 
 apt install certbot -y
 
-certbot certonly --standalone -n --agree-tos -m $1 -d $(hostname --fqdn)
+certbot certonly --standalone -n --agree-tos -m $(cat /etc/pve/user.cfg | awk '{split($0,a,":"); print a[7]}') -d $(hostname --fqdn)
 
 certpath=`ls -d -1 /etc/letsencrypt/live/* | tail -n 1`
 \cp $certpath/fullchain.pem /etc/pve/local/pveproxy-ssl.pem
