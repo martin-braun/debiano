@@ -7,7 +7,7 @@ A useful setup script collection for Debian 10 servers that can be used remotely
 Start off by installing the essentials: 
 
 ```sh
-apt update && apt dist-upgrade -y && apt autoremove -y
+apt update && apt full-upgrade -y && apt autoremove -y
 apt install curl wget software-properties-common gnupg -y
 ```
 
