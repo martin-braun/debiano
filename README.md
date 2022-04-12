@@ -17,6 +17,7 @@ On a fresh start it is recommend to run:
 ```
 dpkg-reconfigure tzdata
 apt update && apt full-upgrade -y && apt autoremove -y
+apt install vim -y
 ```
 
 > `pveupgrade` will execute `apt-get dist-upgrade` which is `apt full-upgrade` and thus is not recommend, unless upgrading after LTS.
@@ -32,7 +33,7 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/
 ### Install Certbot
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- $email $domain
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- $email
 ```
 
 ### Remove nag
