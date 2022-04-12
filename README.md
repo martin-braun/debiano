@@ -9,6 +9,7 @@ If you don't use the subscription repository, please run this first:
 ```
 mv /etc/apt/sources.list.d/pve-enterprise.list /etc/apt/sources.list.d/pve-enterprise.list.disabled
 echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
+apt update
 ```
 
 On a fresh start it is recommend to run: 
@@ -31,7 +32,7 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/
 ### Install Certbot
 
 ```sh
-curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- 
+curl https://raw.githubusercontent.com/martin-braun/debiano/proxmox-ve7/scripts/install-certbot.sh | bash -s -- $email $domain
 ```
 
 ### Remove nag

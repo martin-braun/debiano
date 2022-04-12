@@ -2,7 +2,7 @@
 
 apt install certbot -y
 
-certbot certonly --standalone
+certbot certonly --standalone -n --agree-tos -m $1 -d $2
 
 certpath=`ls -d -1 /etc/letsencrypt/live/* | tail -n 1`
 \cp $certpath/fullchain.pem /etc/pve/local/pveproxy-ssl.pem
