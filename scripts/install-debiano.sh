@@ -1,4 +1,4 @@
-#!/bin/bas
+#!/bin/bash
 trap 'echo "$ $BASH_COMMAND"' DEBUGh
 
 installroot=$HOME/git/gh/martin-braun
