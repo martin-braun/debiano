@@ -14,9 +14,8 @@ echo "deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription" >
 On a fresh start it is recommend to run: 
 
 ```
-dpkg-reconfigure tzdata
+dpkg-reconfigure tzdata && timedatectl set-timezone UTC
 apt update && apt full-upgrade -y && apt autoremove -y
-apt install vim -y
 ```
 
 ### Auto-Patch
