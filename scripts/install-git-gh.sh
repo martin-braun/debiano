@@ -15,8 +15,14 @@ if command -v gh >/dev/null 2>&1; then
 		echo "GitHub CLI installed"
 		eval "$(ssh-agent -s)"
 		ssh-add $HOME/.ssh/id_rsa
-		echo "Please authenticate with GitHub and upload your SSH key to GitHub ..."
-		echo "Choose to authenticate using a browser, you can then authenticate using a handheld by visiting https://github.com/login/device"
+
+		echo "Choose to authenticate git using a browser, you can then authenticate by pasting your public key at https://github.com/settings/ssh/new"
+		echo "YOUR PUBLIC KEY:"
+		cat $HOME/.ssh/id_rsa.pub
+
+		echo ""
+		echo "After that, please authenticate with GitHub via CLI."
+		echo "Choose to authenticate GitHub CLI using a browser, you can then authenticate using a handheld by visiting https://github.com/login/device"
 		gh auth login
 	fi
 fi

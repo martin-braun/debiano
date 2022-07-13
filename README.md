@@ -22,7 +22,7 @@ sudo apt install curl ca-certificates -y
 Also recommend:
 
 ```sh
-sudo apt install aptitude apt-rdepends xclip python3-pip -y
+sudo apt install vim aptitude apt-rdepends xclip python3-pip -y
 pip3 install opencv-python
 ```
 
