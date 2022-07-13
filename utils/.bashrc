@@ -11,4 +11,4 @@ if [ -f $dirname/.bash_aliases ]; then
 	source $dirname/.bash_aliases
 fi
 
-$PATH="$dirname/utils:$PATH"
+$PATH="$PATH:$dirname"
