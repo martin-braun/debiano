@@ -9,7 +9,7 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-if ! command -v gh >/dev/null 2>&1; then
+if command -v gh >/dev/null 2>&1; then
 	ssh-keygen -o
 	if [ $? -eq 0 ]; then # keygen successfully
 		echo "GitHub CLI installed"

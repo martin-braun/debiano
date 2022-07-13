@@ -7,7 +7,15 @@ A useful setup script collection for Debian for Desktop environments that can be
 Start off by installing the essentials: 
 
 ```sh
-sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y
+su -
+usermod -aG sudo YOUR_USERNAME
+reboot
+```
+
+After reboot:
+
+```sh
+sudo apt update && sudo apt full-upgrade -y && sudo apt autoclean && sudo apt autoremove -y
 sudo apt install curl ca-certificates -y
 ```
 
