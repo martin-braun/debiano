@@ -9,6 +9,6 @@ mkdir -p $installroot
 git clone -b desktop git@github.com:martin-braun/debiano.git $installroot/debiano
 echo "source $installroot/debiano/util/.bashrc" >> $HOME/.bashrc
 source $HOME/.bashrc
-echo "Done!"
 
 trap - DEBUG
+echo "Done!"

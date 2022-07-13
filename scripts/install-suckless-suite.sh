@@ -17,6 +17,9 @@ sudo apt install build-essential libxinerama-dev libx11-dev libxft-dev -y
 
 pwd=$(pwd)
 installroot=$HOME/git/gh/martin-braun
+if [ $1 ]; then
+	installroot=$1
+fi
 mkdir -p $installroot
 
 function download_suckless_fork {

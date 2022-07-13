@@ -1,12 +1,15 @@
 #!/bin/bash
-trap 'echo "$ $BASH_COMMAND"' DEBUGh
+trap 'echo "$ $BASH_COMMAND"' DEBUG
 
 stables="stretch|buster|bullseye|bookworm"
 
-# install stubby if not installed
-if ! command -v stubby >/dev/null 2>&1; then
-	sudo apt update && sudo apt install stubby -y
-fi
+function try_install {
+	if ! command -v $2 >/dev/null 2>&1; then
+		sudo apt install $1 -y || { echo "Failed to install essential packages."; exit 1; }
+	fi
+}
+
+try_install stubby
 
 # refresh DNS entries
 sudo sed -i 's/- address_data: .*//g'  /etc/stubby/stubby.yml
@@ -27,6 +30,5 @@ sudo sed -i 's/nameserver [0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/nameserver 127.0.0.1/' 
 # test if QNAME minimization is working
 dig +short txt qnamemintest.internet.nl
 
-echo "Done, please visit https://www.cloudflare.com/ssl/encrypted-sni/ to test if your DNS is encrypted."
-
 trap - DEBUG
+echo "Done, please visit https://www.cloudflare.com/ssl/encrypted-sni/ to test if your DNS is encrypted."

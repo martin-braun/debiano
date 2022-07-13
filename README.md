@@ -31,7 +31,7 @@ pip3 install opencv-python
 Install git and GitHub CLI as well as create and upload key
 
 ```sh
-sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-git-gh.sh | sudo bash -s --
+curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-git-gh.sh | bash -s --
 ```
 
 ### Install debiano with utils (requires git)
@@ -39,7 +39,7 @@ sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/in
 Install all these install scripts and additional utils to your system. Utils consist of useful scripts, functions and aliases that will be made available in $PATH.
 
 ```sh
-sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-debiano.sh | sudo bash -s --
+curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-debiano.sh | bash -s --
 ```
 
 Upgrade with: 
@@ -53,7 +53,7 @@ git -C ~/git/gh/martin-braun/debiano/ pull
 Subscribe to the testing repository and get hot fixes from the unstable repository. Also subscribe several useful repositories
 
 ```sh
-sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-rolling-repos.sh | sudo bash -s --
+curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-rolling-repos.sh | bash -s --
 ```
 
 or locally: 
@@ -79,13 +79,13 @@ apt-upd
 Encrypt DNS queries:
 
 ```sh
-sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-dns-stub-resolver.sh | sudo bash -s --
+curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-dns-stub-resolver.sh | bash -s --
 ```
 
 or locally: 
 
 ```sh
-sudo ~/git/gh/martin-braun/debiano/scripts/install-dns-stub-resolver.sh
+~/git/gh/martin-braun/debiano/scripts/install-dns-stub-resolver.sh
 ```
 
 ### Install suckless suite
@@ -94,25 +94,25 @@ Compile and install suckless suite (dwm / st):
 
 ```sh
 sudo tasksel --new-install # install only system utilities (if not done yet) and re-log
-sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-suckless-suite.sh | sudo bash -s --
+curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-suckless-suite.sh | bash -s --
 ```
 
 or locally: 
 
 ```sh
 sudo tasksel --new-install # install only system utilities (if not done yet) and re-log
-sudo ~/git/gh/martin-braun/debiano/scripts/install-suckless-suite.sh
+~/git/gh/martin-braun/debiano/scripts/install-suckless-suite.sh
 ```
 
 ### Install Firefox and privacy user.js
 
 
 ```sh
-sudo curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-firefox.sh | sudo bash -s --
+curl https://raw.githubusercontent.com/martin-braun/debiano/desk/scripts/install-firefox.sh | bash -s --
 ```
 
 or locally: 
 
 ```sh
-sudo ~/git/gh/martin-braun/debiano/scripts/install-firefox.sh
+~/git/gh/martin-braun/debiano/scripts/install-firefox.sh
 ```

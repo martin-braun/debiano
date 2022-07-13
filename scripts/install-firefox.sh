@@ -23,3 +23,4 @@ $installdir/updater.sh -l
 $installdir/updater.sh -l
 
 trap - DEBUG
+echo "Done!"
