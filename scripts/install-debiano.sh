@@ -1,5 +1,5 @@
 #!/bin/bash
-trap 'echo "$ $BASH_COMMAND"' DEBUGh
+trap 'echo "$ $BASH_COMMAND"' DEBUG
 
 installroot=$HOME/git/gh/martin-braun
 if [ $1 ]; then
