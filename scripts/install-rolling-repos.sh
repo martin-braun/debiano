@@ -78,3 +78,4 @@ curl https://raw.githubusercontent.com/martin-braun/debiano/desktop/assets/debse
 # EOF > /etc/apt/preferences.d/unstable-packages
 
 trap - DEBUG
+echo "Done!"

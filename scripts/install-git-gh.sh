@@ -22,3 +22,4 @@ if command -v gh >/dev/null 2>&1; then
 fi
 
 trap - DEBUG
+echo "Done!"

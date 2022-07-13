@@ -54,4 +54,5 @@ echo "exec dwm" > $HOME/.xinitrc
 build_suckless_fork st
 build_suckless_fork dmenu
 
+echo "Done!"
 trap - DEBUG

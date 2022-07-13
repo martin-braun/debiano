@@ -11,3 +11,4 @@ try_install qemu qemu
 # t.b.d.
 
 trap - DEBUG
+echo "Done!"
