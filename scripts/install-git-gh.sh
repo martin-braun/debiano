@@ -16,11 +16,6 @@ try_install ssh
 try_install git
 try_install gh
 
-if [ $? -ne 0 ]; then
-	echo "Failed to install essential packages."
-	exit 1
-fi
-
 if command -v gh >/dev/null 2>&1; then
 	ssh-keygen -o
 	if [ $? -eq 0 ]; then # keygen successfully
