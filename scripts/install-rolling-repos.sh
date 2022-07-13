@@ -1,8 +1,10 @@
 #!/bin/bash
 trap 'echo "$ $BASH_COMMAND"' DEBUG
+set -e
 
 stables="stretch|buster|bullseye|bookworm"
 
+sudo apt update
 function try_install {
 	if ! command -v $2 >/dev/null 2>&1; then
 		sudo apt install $1 -y || { echo "Failed to install essential packages."; exit 1; }
